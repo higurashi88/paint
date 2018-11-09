@@ -1,7 +1,9 @@
-class casorMotion{
+class cursorMotion{
  int carsorLoc(int locX){
    if(mousePressed==true){
-     locX=mouseX;
+     if(0<=mouseX && mouseX <=255){
+       locX=mouseX;
+     }
    }
    return locX;
  }

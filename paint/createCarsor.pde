@@ -1,5 +1,7 @@
 class createCarsor{
-  void createCarsor(int x,int y){
+  void create(int x,int y){
+    rectMode(CENTER);
+    stroke(255);
     rect(x,y,10,30);
   }
 }
