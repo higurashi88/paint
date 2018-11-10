@@ -1,5 +1,7 @@
 class pannel{
   void colorBar(){
+    int yStroke=height*3/4-40;
+    lineStroke(yStroke);
     int yR=height*3/4;//Red pannel 
     lines(yR,"Red");
     int yG=height*3/4+40;//Green pannel 
@@ -25,8 +27,15 @@ class pannel{
           stroke(0,0,Col[i]);
           break;
       }
-      line(i,Y,i,Y+30);
-      
+      line(i,Y,i,Y+30);      
     }
-  }  
+  }
+  void lineStroke(int y){
+    noStroke();
+    rectMode(CENTER);
+    fill(200);
+    rect(256/2,y+15,264,30);
+    fill(0);
+    triangle(255,y,255,y+30,0,y+15);
+  }
 }

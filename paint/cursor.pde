@@ -3,7 +3,7 @@ class Cursor{
   void create(int x,int y){
     rectMode(CENTER);
     noStroke();
-    stroke(255);
+    fill(255);
     rect(x,y,10,30);
   }  
   

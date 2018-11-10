@@ -1,18 +1,18 @@
 class ToolList{
-  void List(String type){
+  void List(String type, int r,int g, int b){
     float tmpX=mouseX,tmpY=mouseY;
     switch(type){
       case "pencil":
       tmpX=locX(tmpX);
       tmpY=locY(tmpY);
-      pencil(tmpX,tmpY);
+      pencil(tmpX,tmpY,r,g,b);
       break;
     }
   }
   
-  void pencil(float x,float y){
+  void pencil(float x,float y,int r,int g,int b){
     if(mousePressed==true){
-      stroke(0);
+      stroke(r,g,b);
       strokeWeight(30);
       line(x,y,mouseX,mouseY);
     }
