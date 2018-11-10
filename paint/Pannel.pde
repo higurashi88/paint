@@ -10,6 +10,7 @@ class pannel{
   
   //RGB colorpannel
   void lines(int Y,String C){
+    strokeWeight(1);
     int Col[]=new int[256];
     for(int i=0;i<256;i++){
       Col[i]=255-i;

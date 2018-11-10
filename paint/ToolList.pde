@@ -1,18 +1,30 @@
 class ToolList{
   void List(String type){
+    float tmpX=mouseX,tmpY=mouseY;
     switch(type){
       case "pencil":
-      pencil();
+      tmpX=locX(tmpX);
+      tmpY=locY(tmpY);
+      pencil(tmpX,tmpY);
       break;
     }
   }
   
-  void pencil(){
+  void pencil(float x,float y){
     if(mousePressed==true){
-      fill(0);
-      noStroke();
-      ellipse(mouseX,mouseY,5,5);
+      stroke(0);
+      strokeWeight(30);
+      line(x,y,mouseX,mouseY);
     }
   }
+  
+  float locX(float x){
+    x=mouseX;
+    return x;
+  }
+  float locY(float y){
+    y=mouseY;
+    return y;
+  }  
   
 }

@@ -42,6 +42,7 @@ void draw(){
     bX=Cursor.carsorLoc(bX);
   }
   
-  toolList.List(toolType);
+  //if on canvas get tool
+  if(canvas.OnCanvas()==true)toolList.List(toolType);
   
 }
