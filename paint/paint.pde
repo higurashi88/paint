@@ -1,41 +1,47 @@
-colorPannel pannel;
+pannel pannel;
 canvas canvas;
-createCarsor Create;
-cursorMotion motion;
+Cursor Cursor;
+ToolList toolList;
 
-int locR,locG,locB;
-int r,g,b;
 int rX,rY,gX,gY,bX,bY;
+String toolType="pencil";//tool type
 
 void setup(){
   size(1500,1000);
-  pannel = new colorPannel();
+  pannel = new pannel();
   canvas = new canvas();
-  Create = new createCarsor();
-  motion = new cursorMotion();
+  Cursor = new Cursor();
+  toolList = new ToolList(); 
   
   rX=0;gX=0;bX=0;
   rY=height*3/4+15;gY=height*3/4+40+15;
   bY=height*3/4+80+15;
-  locR =0;
-  locG =0;
-  locB =0;
   
+  //draw canvas
+  canvas.drawArea();
 }
 void draw(){
-  background(200);
+  //draw color bar
   pannel.colorBar();
-  canvas.drawArea();
-  Create.create(rX,rY);
+  
+  //get red color
+  Cursor.create(rX,rY);
   if(rY-15<mouseY && mouseY+15<rY+30){
-    rX=motion.carsorLoc(rX);
+    rX=Cursor.carsorLoc(rX);
   }
-  Create.create(gX,gY);
+  
+  //get green color
+  Cursor.create(gX,gY);
    if(gY-15<mouseY && mouseY+15<gY+30){
-    gX=motion.carsorLoc(gX);
+    gX=Cursor.carsorLoc(gX);
   }
-  Create.create(bX,bY);
+  
+  //get blue color
+  Cursor.create(bX,bY);
    if(bY-15<mouseY && mouseY+15<bY+30){
-    bX=motion.carsorLoc(bX);
+    bX=Cursor.carsorLoc(bX);
   }
+  
+  toolList.List(toolType);
+  
 }

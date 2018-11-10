@@ -1,4 +1,4 @@
-class colorPannel{
+class pannel{
   void colorBar(){
     int yR=height*3/4;//Red pannel 
     lines(yR,"Red");
