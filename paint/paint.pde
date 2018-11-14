@@ -2,6 +2,7 @@ pannel pannel;
 canvas canvas;
 Cursor Cursor;
 ToolList toolList;
+SaveFile SF;
 
 int rX,rY,gX,gY,bX,bY;
 int r=0,g=0,b=0;
@@ -15,6 +16,7 @@ void setup(){
   canvas = new canvas();
   Cursor = new Cursor();
   toolList = new ToolList(); 
+  SF = new SaveFile();
   
   rX=0;gX=0;bX=0;//colorPannelLocation
   stroke=0;strokeY=height*3/4-40+15;//strokeWeight;
@@ -57,5 +59,11 @@ void draw(){
   
   //if on canvas get tool
   if(canvas.OnCanvas()==true)toolList.List(toolType,r,g,b);
-  
+}
+
+void keyPressed(){
+  //save
+  if(key=='s'){
+    SF.saving();
+  }
 }
