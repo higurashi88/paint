@@ -18,17 +18,23 @@ void setup(){
   toolList = new ToolList(); 
   SF = new SaveFile();
   
+  
   rX=0;gX=0;bX=0;//colorPannelLocation
   stroke=0;strokeY=height*3/4-40+15;//strokeWeight;
   rY=height*3/4+15;gY=height*3/4+40+15;
   bY=height*3/4+80+15;
   
   //draw canvas
-  canvas.drawArea();
+  canvas.pixel(r,g,b);
+
 }
 void draw(){
+
   //draw color bar
   pannel.colorBar();
+  
+  //draw canvas
+  canvas.pixel(r,g,b);
   
   //get red color
   Cursor.create(rX,rY);
