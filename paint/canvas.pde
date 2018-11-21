@@ -1,34 +1,34 @@
-class canvas{
-  void pixel(int R,int G, int B){
-    int pixelR[][]=new int[1100][900];
-    int pixelG[][]=new int[1100][900];
-    int pixelB[][]=new int[1100][900];
-    int RectSide=1;
-    noStroke();
-    rectMode(CENTER);
-    for(int i=0;i<1100;i++){
+class Canvas{
+    int dotR[][]= new int [900][900];
+    int dotG[][]= new int [900][900];
+    int dotB[][]= new int [900][900];
+    int dotX[]= new int [900];
+    int dotY[]= new int [900];
+    int RectSide =1;
+    
+  void PixelCanvas(){
+    for(int i=0;i<900;i++){
+      dotX[i]=i+500;
       for(int j=0;j<900;j++){
-        pixelR[i][j]=R;
-        pixelG[i][j]=G;
-        pixelB[i][j]=B;
-        fill(pixelR[i][j],pixelG[i][j],pixelB[i][j]);
-        rect(i+350,j+50,RectSide,RectSide);
+        dotY[j]=j+50;
+        rect(dotX[i],dotY[j],RectSide,RectSide);
+      }
+    }   
+  }
+  
+  void reloadPixelCanvas(int r,int g,int b){
+    if(mousePressed==true){
+      if(500<=mouseX && mouseX <900+500){
+        if(50<=mouseY && mouseY<900+500){
+          dotR[mouseX-500][mouseY-50]=r;
+          dotG[mouseX-500][mouseY-50]=g;
+          dotB[mouseX-500][mouseY-50]=b;
+          fill(dotR[mouseX-500][mouseY-50],dotG[mouseX-500][mouseY-50],dotB[mouseX-500][mouseY-50]);
+          stroke(dotR[mouseX-500][mouseY-50],dotG[mouseX-500][mouseY-50],dotB[mouseX-500][mouseY-50]);
+          rect(dotX[mouseX-500],dotY[mouseY-50],1,1);
+        }
       }
     }
   }
   
-  void drawArea(){
-    noStroke();
-    rectMode(CENTER);
-    rect(900,500,1150,990);
-  }
-  
-  boolean OnCanvas(){
-    if(900-1150/2<=mouseX && mouseX<=900+1150/2){
-      if(500-990/2<=mouseY && mouseY<=500+990/2){
-        return true;
-      }
-    }
-    return false;  
-  }
 }
