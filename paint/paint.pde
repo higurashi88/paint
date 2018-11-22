@@ -19,12 +19,21 @@ void setup(){
 }
 
 void draw(){
+  //red pannel
   pannel.createPannel(RY,1,0,0);
   r=pannel.cursor(r,RY);
+  
+  //green pannel
   pannel.createPannel(GY,0,1,0);
   g=pannel.cursor(g,GY);
+  
+  //blue pannel
   pannel.createPannel(BY,0,0,1);
   b=pannel.cursor(b,BY);
+  
+  //reload canvas
   canvas.reloadPixelCanvas(r,g,b);
+  
+  //save button
   if(button.button(50,50)==true)saveFile.saving();
 }
