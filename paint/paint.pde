@@ -2,8 +2,10 @@ Canvas canvas;
 Pannel pannel;
 Button button;
 SaveFile saveFile;
-int r=255,g=255,b=255;
+int r=255,g=255,b=255;//now color
+int thick=5;
 int RY=800,GY=850,BY=900;
+int thickY=750;
 
 void setup(){
   canvas = new Canvas();
@@ -19,6 +21,10 @@ void setup(){
 }
 
 void draw(){
+  //thickness pannel
+  pannel.thicknessPannel(thickY);
+  thick=pannel.cursor(thick,thickY);
+  
   //red pannel
   pannel.createPannel(RY,1,0,0);
   r=pannel.cursor(r,RY);
