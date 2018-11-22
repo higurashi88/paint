@@ -2,6 +2,7 @@ Canvas canvas;
 Pannel pannel;
 Button button;
 SaveFile saveFile;
+int x=0,y=0;
 int r=255,g=255,b=255;//now color
 int thick=5; //thickness
 int fileNum=0;//save file number
@@ -39,7 +40,8 @@ void draw(){
   b=pannel.cursor(b,BY);
   
   //reload canvas
-  canvas.reloadPixelCanvas(r,g,b);
+  x=mouseX-500;y=mouseY-50;
+  canvas.reloadPixelCanvas(x,y,r,g,b,thick);
   
   //save button
   if(button.button(50,50)==true){
