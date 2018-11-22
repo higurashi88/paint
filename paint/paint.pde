@@ -3,7 +3,8 @@ Pannel pannel;
 Button button;
 SaveFile saveFile;
 int r=255,g=255,b=255;//now color
-int thick=5;
+int thick=5; //thickness
+int fileNum=0;//save file number
 int RY=800,GY=850,BY=900;
 int thickY=750;
 
@@ -41,5 +42,7 @@ void draw(){
   canvas.reloadPixelCanvas(r,g,b);
   
   //save button
-  if(button.button(50,50)==true)saveFile.saving();
+  if(button.button(50,50)==true){
+    fileNum=saveFile.saving(fileNum);
+  }
 }

@@ -1,7 +1,7 @@
 class SaveFile{
-  void saving(){
-    int num=0;
-    save(num+".png");
-    num++;
+  int saving(int name){
+    save(name+".png");
+    name++;
+    return name;
   }
 }
