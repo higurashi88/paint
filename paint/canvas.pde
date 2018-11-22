@@ -18,15 +18,16 @@ class Canvas{
   }
   
   void reloadPixelCanvas(int r,int g,int b){
+    int x=mouseX-500,y=mouseY-50;
     if(mousePressed==true){
       if(500<=mouseX && mouseX <900+500){
         if(50<=mouseY && mouseY<900+500){
-          dotR[mouseX-500][mouseY-50]=r;
-          dotG[mouseX-500][mouseY-50]=g;
-          dotB[mouseX-500][mouseY-50]=b;
-          fill(dotR[mouseX-500][mouseY-50],dotG[mouseX-500][mouseY-50],dotB[mouseX-500][mouseY-50]);
-          stroke(dotR[mouseX-500][mouseY-50],dotG[mouseX-500][mouseY-50],dotB[mouseX-500][mouseY-50]);
-          rect(dotX[mouseX-500],dotY[mouseY-50],1,1);
+          dotR[x][y]=r;
+          dotG[x][y]=g;
+          dotB[x][y]=b;
+          fill(dotR[x][y],dotG[x][y],dotB[x][y]);
+          stroke(dotR[x][y],dotG[x][y],dotB[x][y]);
+          rect(dotX[x],dotY[y],1,1);
         }
       }
     }
