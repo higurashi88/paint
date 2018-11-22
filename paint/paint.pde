@@ -1,11 +1,15 @@
 Canvas canvas;
 Pannel pannel;
+Button button;
+SaveFile saveFile;
 int r=255,g=255,b=255;
-int RY=1200,GY=1250,BY=1300;
+int RY=800,GY=850,BY=900;
 
 void setup(){
   canvas = new Canvas();
   pannel = new Pannel();
+  button= new Button();
+  saveFile= new SaveFile();
  
   size(1500,1000);
   background(200);
@@ -15,6 +19,12 @@ void setup(){
 }
 
 void draw(){
-  pannel.createPannel(RY,0,255,255);
+  pannel.createPannel(RY,1,0,0);
+  r=pannel.cursor(r,RY);
+  pannel.createPannel(GY,0,1,0);
+  g=pannel.cursor(g,GY);
+  pannel.createPannel(BY,0,0,1);
+  b=pannel.cursor(b,BY);
   canvas.reloadPixelCanvas(r,g,b);
+  if(button.button(50,50)==true)saveFile.saving();
 }

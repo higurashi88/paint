@@ -7,6 +7,7 @@ class Canvas{
     int RectSide =1;
     
   void PixelCanvas(){
+    
     for(int i=0;i<900;i++){
       dotX[i]=i+500;
       for(int j=0;j<900;j++){

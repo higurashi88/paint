@@ -1,12 +1,26 @@
 class Pannel{
-  void CreatePannel(int Y,int r,int g,int b){
+  void createPannel(int Y,int r,int g,int b){
     for(int i=0;i<255;i++){
-      if(r!=255)r++;
-      if(g!=255)b++;
-      if(b!=255)b++;
+      if(r!=0)r++;
+      if(g!=0)g++;
+      if(b!=0)b++;
       stroke(r,g,b);
-      line(i,Y,i,Y+10);
+      line(i+5,Y,i+5,Y+40);
     }
+  }
+  
+  int cursor(int x,int y){
+    stroke(0);
+    fill(255);
+    if(20<mouseX && mouseX <270){
+      if(y<mouseY && mouseY<y+40){
+        if(mousePressed==true){
+          x=mouseX-10;
+        }
+      }
+    }
+    rect(x,y,5,40);
+    return x;
   }
   
 }
