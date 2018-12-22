@@ -9,6 +9,8 @@ class Pannel{
       line(i+5,Y,i+5,Y+40);
     }
   }
+  
+  /*
   //strokeWeight pannel
   void thicknessPannel(int y){
     fill(200);
@@ -16,7 +18,7 @@ class Pannel{
     fill(0);
     triangle(5,y,255,y,255,y+40);  
   }
-  
+  */
   //pannel cursor
   int cursor(int x,int y){
     stroke(0);

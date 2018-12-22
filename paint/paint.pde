@@ -23,9 +23,11 @@ void setup(){
 }
 
 void draw(){
+  /*
   //thickness pannel
   pannel.thicknessPannel(thickY);
   thick=pannel.cursor(thick,thickY);
+  */
   
   //red pannel
   pannel.createPannel(RY,1,0,0);
