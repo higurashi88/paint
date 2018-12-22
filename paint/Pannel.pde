@@ -14,7 +14,7 @@ class Pannel{
     fill(200);
     rect(4,750,257,40);
     fill(0);
-    triangle(5,y,5,y+40,255,y+20);  
+    triangle(5,y,255,y,255,y+40);  
   }
   
   //pannel cursor

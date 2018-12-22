@@ -17,27 +17,35 @@ class Canvas{
     }   
   }
   
-  int reloadPixelCanvas(int x,int y,int r,int g,int b,int thick){
+
+  void reloadPixelCanvas(int x,int y,int r,int g,int b,int thick){
     if(mousePressed==true){
       if(0<=x && x <900){
         if(0<=y && y<900){
-          if(dist(dotX[x],dotY[y],x,y)<=thick){
+          if(dist(dotX[x],dotY[y],mouseX,mouseY)<=thick){
             //if(x<0 || y<0)return 0;
             reloadPixelCanvas(x+1,y,r,g,b,thick);
             reloadPixelCanvas(x,y+1,r,g,b,thick);
-            reloadPixelCanvas(x-1,y,r,g,b,thick);
-            reloadPixelCanvas(x,y-1,r,g,b,thick);
+            //reloadPixelCanvas(x-1,y,r,g,b,thick);
+            //reloadPixelCanvas(x,y-1,r,g,b,thick);
           }
           dotR[x][y]=r;
           dotG[x][y]=g;
           dotB[x][y]=b;
-          fill(dotR[x][y],dotG[x][y],dotB[x][y]);
-          stroke(dotR[x][y],dotG[x][y],dotB[x][y]);
-          rect(dotX[x],dotY[y],1,1);
+          reload(dotR[x][y],dotG[x][y],dotB[x][y],dotX[x],dotY[y]);
+          
+          
+          //fill(dotR[x][y],dotG[x][y],dotB[x][y]);
+          //stroke(dotR[x][y],dotG[x][y],dotB[x][y]);
+          //rect(dotX[x],dotY[y],1,1);
         }
       }
     }
-    return 0;
   }
   
+  void reload(int r,int g,int b,int x,int y){
+    fill(r,g,b);
+    stroke(r,g,b);
+    rect(x,y,1,1);
+  }
 }
